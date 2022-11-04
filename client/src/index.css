@@ -1,13 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+
+:root {
+  /* Base font size */
+  font-size: 10px;
+
+  /* Set neon color */
+  --neon-text-color: #f40;
+  --neon-border-color: #08f;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Exo 2", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #0a0908;
+  color: #daeafa;
+  color: #f6fff8;
+  display: grid;
+  place-items: center;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
