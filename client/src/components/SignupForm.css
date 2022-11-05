@@ -1,0 +1,55 @@
+.signup-container p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  overflow: clip;
+  padding: 10px;
+  gap: 10px;
+}
+
+.form__input {
+  color: #f6fff8;
+  width: 90%;
+  padding: 20px;
+  border: 0;
+  outline: 0;
+  transition: all 0.5s;
+  background: linear-gradient(
+    135deg,
+    hsla(0, 0%, 100%, 0.04),
+    hsla(0, 0%, 100%, 0.07) 20%,
+    hsla(0, 0%, 100%, 0.11) 50%,
+    hsla(0, 0%, 100%, 0.07) 80%,
+    hsla(0, 0%, 100%, 0.04)
+  );
+}
+.form__input:focus {
+  background: rgb(51, 57, 61);
+  caret-color: aliceblue;
+}
+.btn {
+  display: block;
+  width: 120px;
+  padding: 20px;
+  outline: 0;
+  border: 0;
+  color: white;
+  transition: 0.3s;
+  background: rgb(43, 45, 48);
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 2rem;
+}
+.btn:hover {
+  background: rgb(51, 57, 61);
+}
+.btn:active {
+  transform: scale(0.96);
+}
