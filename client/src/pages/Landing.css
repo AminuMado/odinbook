@@ -4,6 +4,7 @@
   font-style: italic;
   color: #fff;
   padding: 4rem 6rem 5.5rem;
+  margin-bottom: 20px;
   border: 0.4rem solid #fff;
   border-radius: 2rem;
   text-transform: uppercase;
@@ -23,7 +24,39 @@
 .Landing__title:focus {
   outline: none;
 }
-
+.Landing__testaccount-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.Landing__testaccount {
+  text-align: center;
+}
+.Landing__testaccountBtn {
+  padding: 5px 10px;
+  margin-left: 4px;
+  background-color: transparent;
+  color: #646464;
+  border-radius: 5px;
+  border: 2px solid #646464;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.Landing__testaccountBtn:hover {
+  color: whitesmoke;
+  /* animation: flicker 3.5s infinite alternate; */
+  border: 2px solid rgb(132, 179, 211);
+  background: linear-gradient(
+    135deg,
+    hsla(0, 0%, 100%, 0.04),
+    hsla(0, 0%, 100%, 0.07) 20%,
+    hsla(0, 0%, 100%, 0.11) 50%,
+    hsla(0, 0%, 100%, 0.07) 80%,
+    hsla(0, 0%, 100%, 0.04)
+  );
+}
 /* Animate neon flicker */
 @keyframes flicker {
   0%,
@@ -49,5 +82,10 @@
   55% {
     text-shadow: none;
     box-shadow: none;
+  }
+}
+@media only screen and (max-width: 715px) {
+  .Landing__title {
+    font-size: 5.5rem;
   }
 }
