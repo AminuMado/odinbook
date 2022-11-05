@@ -83,7 +83,14 @@ button:focus {
   color: greenyellow;
   outline: 0;
 } */
-
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
+.login-container p {
+  font-size: 20px;
+  text-align: center;
+}
 .form {
   display: flex;
   flex-direction: column;
