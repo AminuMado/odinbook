@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LoginForm } from "../components/loginForm";
+import { LoginForm } from "../components/LoginForm";
 import { SignupForm } from "../components/SignupForm";
 import "./Landing.css";
 export const Landing = () => {
