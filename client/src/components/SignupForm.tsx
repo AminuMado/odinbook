@@ -1,4 +1,4 @@
-import "./SignupForm.css";
+import "./LoginForm.css";
 import { useState } from "react";
 
 export const SignupForm = () => {
@@ -49,7 +49,6 @@ export const SignupForm = () => {
         />
         <button className="btn">Sign Up</button>
       </form>
-      <p>Already have an account? Log In</p>
     </div>
   );
 };
