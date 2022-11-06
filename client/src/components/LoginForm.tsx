@@ -23,7 +23,6 @@ export const LoginForm = () => {
         />
         <button className="btn">Log In</button>
       </form>
-      <p className="">Don't have an account? Sign up</p>
     </div>
   );
 };
