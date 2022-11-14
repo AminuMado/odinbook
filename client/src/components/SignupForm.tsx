@@ -49,6 +49,9 @@ export const SignupForm = () => {
         />
         <button className="btn">Sign Up</button>
       </form>
+      <span data-testid="error" className="error-msg">
+        This is a test error message
+      </span>
     </div>
   );
 };
