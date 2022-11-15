@@ -3,7 +3,7 @@ import { useState } from "react";
 export const useSignup = () => {
   const [error, setError] = useState<null | string>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const url = "a test url";
+  const url = ``;
   const signup = async (
     firstname: string,
     lastname: string,
