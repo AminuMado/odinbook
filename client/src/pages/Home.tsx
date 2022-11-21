@@ -1,3 +1,4 @@
+import { Navbar } from "../components/Navbar";
 export const Home = () => {
   /**
    * Todos
@@ -5,5 +6,9 @@ export const Home = () => {
    * should have the posts card
    * should have the create post input
    */
-  return <div>Hello Home</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 };
