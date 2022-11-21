@@ -1,0 +1,28 @@
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.navbar ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.4s;
+}
+.navbar ul li.active {
+  color: chartreuse;
+}
+.navbar ul li:hover {
+  color: chartreuse;
+}
+.navbar ul li:active {
+  transform: scale(0.95);
+}
+.navbar ul li svg {
+  width: 3rem;
+  height: 3rem;
+}
