@@ -4,10 +4,12 @@
   align-items: center;
   gap: 25px;
   font-size: 3rem;
-  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
 }
 .navbar ul li {
   list-style: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 2px;
@@ -25,4 +27,37 @@
 .navbar ul li svg {
   width: 3rem;
   height: 3rem;
+}
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 691px) and (max-width: 840px) {
+  .navbar ul li {
+    flex-direction: column;
+  }
+}
+@media (min-width: 496px) and (max-width: 690px) {
+  .navbar ul li {
+    flex-direction: column;
+    font-size: 2rem;
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 495px) {
+  .navbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 99%;
+    height: 70px;
+    padding: 2px;
+    background-color: rebeccapurple;
+  }
+  .navbar ul li {
+    font-size: 1.4rem;
+    flex-direction: column;
+  }
 }
