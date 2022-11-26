@@ -1,4 +1,5 @@
 import { Navbar } from "../components/Navbar/Navbar";
+import { Post } from "../components/Post/Post";
 export const Home = () => {
   /**
    * Todos
@@ -9,6 +10,7 @@ export const Home = () => {
   return (
     <div>
       <Navbar />
+      <Post />
     </div>
   );
 };
