@@ -13,6 +13,9 @@
   align-items: center;
   justify-content: center;
 }
+.newPost-bottom {
+  display: flex;
+}
 .newPost__textarea {
   width: 35em;
   padding: 12px 20px;
