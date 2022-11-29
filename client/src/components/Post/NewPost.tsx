@@ -1,11 +1,12 @@
-import { useState } from "react";
 import "./NewPost.css";
+import { useState } from "react";
+import PermMediaIcon from "@mui/icons-material/PermMedia";
+import CancelIcon from "@mui/icons-material/Cancel";
 export const NewPost = () => {
   const [postContent, setPostContent] = useState("");
+  const [file, setFile] = useState<Blob | MediaSource | null>(null);
   return (
     <div className="newPost-container">
-      {/* we have a top and a bottom seprated by a hr line
-        The top contains the textarea and the bottom contains the submit button and the select image picker */}
       <form className="newPost">
         <div className="newPost-top">
           <textarea
@@ -18,20 +19,39 @@ export const NewPost = () => {
           />
         </div>
         <hr className="newPost-hr" />
+        {file && (
+          <div className="newPost-img-container">
+            <img
+              className="newPost-img"
+              src={URL.createObjectURL(file)}
+              alt=""
+            />
+            <CancelIcon
+              className="newPost-cancelIcon"
+              onClick={() => setFile(null)}
+            />
+          </div>
+        )}
         <div className="newPost-bottom">
-          {/* Add the select image picker here */}
           <label htmlFor="fileInput">
-            {/* Add the image photo here */}
-            Select an image
+            <PermMediaIcon />
+            Add an image
           </label>
           <input
             type="file"
             hidden
             name="fileInput"
             id="fileInput"
-            // Add a way to save the image upload state variable here
+            accept=".png,.jpeg,.jpg"
+            onChange={(e) => {
+              if (e.target.files) {
+                setFile(e.target.files[0]);
+              }
+            }}
           />
-          <button className="newPost__button">Post</button>
+          <button disabled={!postContent} className="newPost__button">
+            Post
+          </button>
         </div>
       </form>
       {/* {error && <div className="error">{error}</div>} */}
