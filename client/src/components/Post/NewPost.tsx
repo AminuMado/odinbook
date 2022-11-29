@@ -20,6 +20,17 @@ export const NewPost = () => {
         <hr className="newPost-hr" />
         <div className="newPost-bottom">
           {/* Add the select image picker here */}
+          <label htmlFor="fileInput">
+            {/* Add the image photo here */}
+            Select an image
+          </label>
+          <input
+            type="file"
+            hidden
+            name="fileInput"
+            id="fileInput"
+            // Add a way to save the image upload state variable here
+          />
           <button className="newPost__button">Post</button>
         </div>
       </form>
