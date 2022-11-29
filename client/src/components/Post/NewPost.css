@@ -20,6 +20,41 @@
   width: 100%;
   padding: 4px 15px;
 }
+.newPost-bottom label {
+  display: flex;
+  font-size: 1.8rem;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.newPost-bottom label svg {
+  width: 2.3rem;
+  height: 2.3rem;
+  color: cadetblue;
+}
+.newPost-bottom label svg:hover {
+  color: azure;
+}
+.newPost-img-container {
+  max-width: 50em;
+  padding: 10px;
+  position: relative;
+}
+.newPost-img {
+  width: 100%;
+  object-fit: contain;
+}
+.newPost-img-container .newPost-cancelIcon {
+  position: absolute;
+  top: 8px;
+  right: 7px;
+  width: 2em;
+  height: 2em;
+  opacity: 0.7;
+  cursor: pointer;
+}
 .newPost__textarea {
   width: 35em;
   height: 5em;
@@ -38,6 +73,34 @@
 .newPost__textarea:focus {
   background-color: #fff;
   outline: 0;
+}
+.newPost__button {
+  background-color: #fff000;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.newPost__button:not(:disabled):hover,
+.newPost__button:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.newPost__button:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
 }
 .newPost-hr {
   color: red;
