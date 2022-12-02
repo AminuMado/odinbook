@@ -1,0 +1,65 @@
+.postCard-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid springgreen;
+  /* width: 50em; */
+  padding: 10px;
+  border-radius: 15px;
+}
+.postCard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.postCard-header__left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.postCard-header__userAvatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 60px;
+  transition: all 0.3s ease;
+}
+.postCard-header__userAvatar:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.postCard-header__userAvatar:active {
+  transform: scale(1);
+}
+.postCard-header__username {
+  font-size: 2em;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease-out;
+}
+.postCard-header__username:hover {
+  border-bottom: 0.5px solid white;
+  cursor: pointer;
+}
+.postCard-header__datePosted {
+  font-size: 1.7em;
+  color: #6c757d;
+}
+
+.postCard-header__right .postCard-header__deleteIcon {
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s ease;
+}
+.postCard-header__deleteIcon {
+  padding: 4px;
+  border-radius: 50%;
+  color: #6c757d;
+}
+.postCard-header__deleteIcon:hover {
+  background-color: red;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.postCard-header__deleteIcon:active {
+  transform: scale(0.95);
+}
