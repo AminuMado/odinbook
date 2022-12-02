@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   border: 1px solid springgreen;
-  /* width: 50em; */
   padding: 10px;
   border-radius: 15px;
 }
@@ -11,6 +10,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  border-bottom: 1px solid #6c757d;
+  padding-bottom: 10px;
 }
 .postCard-header__left {
   display: flex;
