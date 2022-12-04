@@ -18,8 +18,20 @@ export const PostCard = () => {
           <DeleteOutlineRoundedIcon className="postCard-header__deleteIcon" />
         </div>
       </div>
-      <div className="postCard-body"></div>
-      <div className="postCard-options"></div>
+      <div className="postCard-body">
+        <p className="postCard-body__content">
+          Hello I am Michael Schofield and i am awesome Hello I am Michael
+          Schofield and i am awesomecHello I am Michael Schofield awesome.
+        </p>
+        <div className="postCard-body__details">
+          <p>Likes</p>
+          <p>Comments</p>
+        </div>
+      </div>
+      <div className="postCard-options">
+        <button className="postCard-options__like"> Like</button>
+        <button className="postCard-options__comment">Comment</button>
+      </div>
       {/* This componemt contains various things
     1. the header part
       a. the usericon
