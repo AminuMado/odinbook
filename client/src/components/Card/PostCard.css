@@ -12,11 +12,15 @@
   width: 100%;
   border-bottom: 1px solid #6c757d;
   padding-bottom: 10px;
+  background-color: goldenrod;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 .postCard-header__left {
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 5px;
 }
 .postCard-header__userAvatar {
   width: 90px;
@@ -45,7 +49,9 @@
   font-size: 1.7em;
   color: #6c757d;
 }
-
+.postCard-header__right {
+  padding: 5px;
+}
 .postCard-header__right .postCard-header__deleteIcon {
   width: 35px;
   height: 35px;
@@ -63,4 +69,56 @@
 }
 .postCard-header__deleteIcon:active {
   transform: scale(0.95);
+}
+.postCard-body {
+  background-color: #6c757d;
+  max-width: 800px;
+  font-size: 2em;
+  padding: 0px 10px;
+}
+.postCard-body__content {
+  display: flex;
+  word-break: break-word;
+  text-align: justify;
+}
+.postCard-body__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid;
+}
+.postCard-options__like {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 15px;
+  border-right-color: red;
+  width: 50%;
+  font-size: 2em;
+  border-width: 0;
+  border-right-width: 2px;
+  background-color: goldenrod;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.postCard-options__like:hover {
+  color: #fff;
+  background-color: crimson;
+  border-color: yellow;
+}
+
+.postCard-options__comment {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 15px;
+  width: 50%;
+  font-size: 2em;
+  border-width: 0px;
+  background-color: goldenrod;
+  height: 40px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.postCard-options__comment:hover {
+  color: #fff;
+  background-color: #202030;
+  border-color: #202030;
 }
