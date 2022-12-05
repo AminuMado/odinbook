@@ -1,6 +1,7 @@
 import "./PostCard.css";
 import avatar_1 from "../../Assets/Images/1.jpg";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
+import { Comment } from "../Comment/CommentForm";
 export const PostCard = () => {
   return (
     <div className="postCard-container">
@@ -46,6 +47,7 @@ export const PostCard = () => {
     4. the post interaction and buttons part
       a. the like button
       b. the comment button */}
+      <Comment />
     </div>
   );
 };
