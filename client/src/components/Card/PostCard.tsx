@@ -4,7 +4,7 @@ import avatar_2 from "../../Assets/Images/2.jpg";
 import avatar_3 from "../../Assets/Images/3.jpg";
 import avatar_4 from "../../Assets/Images/4.jpg";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
-import { Comment } from "../Comment/CommentForm";
+import { NewComment } from "../Comment/CommentForm";
 import { useState } from "react";
 import { Collapsible } from "../Collapsible/Collapsible";
 export const PostCard = () => {
@@ -50,7 +50,7 @@ export const PostCard = () => {
               showNewComment ? "show" : ""
             }`}
           >
-            <Comment />
+            <NewComment />
           </Collapsible>
         </div>
       </div>
@@ -92,7 +92,7 @@ export const PostCard = () => {
               showNewComment ? "show" : ""
             }`}
           >
-            <Comment />
+            <NewComment />
           </Collapsible>
         </div>
       </div>
@@ -134,7 +134,7 @@ export const PostCard = () => {
               showNewComment ? "show" : ""
             }`}
           >
-            <Comment />
+            <NewComment />
           </Collapsible>
         </div>
       </div>
@@ -176,7 +176,7 @@ export const PostCard = () => {
               showNewComment ? "show" : ""
             }`}
           >
-            <Comment />
+            <NewComment />
           </Collapsible>
         </div>
       </div>
