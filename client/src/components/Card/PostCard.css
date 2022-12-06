@@ -98,14 +98,16 @@
   background-color: goldenrod;
   height: 40px;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: background-color 0.4s ease-in, border-radius 1s ease-in-out;
 }
 .postCard-options__like:hover {
   color: #fff;
   background-color: crimson;
   border-color: yellow;
 }
-
+.postCard-options__like.show {
+  border-radius: 0;
+}
 .postCard-options__comment {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 15px;
@@ -114,11 +116,14 @@
   border-width: 0px;
   background-color: goldenrod;
   height: 40px;
-  transition: all 0.3s ease;
+  transition: background-color 0.4s ease-in, border-radius 1s ease-in-out;
   cursor: pointer;
 }
 .postCard-options__comment:hover {
   color: #fff;
   background-color: #202030;
   border-color: #202030;
+}
+.postCard-options__comment.show {
+  border-radius: 0;
 }
