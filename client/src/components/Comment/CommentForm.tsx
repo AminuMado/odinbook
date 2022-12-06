@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./CommentForm.css";
-export const Comment = () => {
+export const NewComment = () => {
   const [commentContent, setCommentContent] = useState("");
   return (
     <div className="newComment">
