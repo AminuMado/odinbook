@@ -9,7 +9,7 @@ export const Comment = () => {
           onChange={(e) => setCommentContent(e.target.value)}
           placeholder="Add new comment..."
           name="newComment"
-        ></textarea>
+        />
         <button disabled={!commentContent} className="newComment__button">
           Post
         </button>
