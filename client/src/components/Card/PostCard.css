@@ -82,10 +82,19 @@
   text-align: justify;
 }
 .postCard-body__details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   border-top: 1px solid;
+}
+.postCard-options__likes {
+  font-size: 1em;
+  border-width: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-align: start;
+}
+.postCard-options__likes:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .postCard-options__like {
   border-top-left-radius: 0px;
@@ -108,6 +117,18 @@
 .postCard-options__like.show {
   border-radius: 0;
 }
+.postCard-options__comments {
+  font-size: 1em;
+  border-width: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-align: end;
+}
+.postCard-options__comments:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .postCard-options__comment {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 15px;
@@ -126,4 +147,7 @@
 }
 .postCard-options__comment.show {
   border-radius: 0;
+}
+.postCard-body__details-bottom {
+  width: 100%;
 }
