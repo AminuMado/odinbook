@@ -7,9 +7,11 @@ import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import { NewComment } from "../Comment/CommentForm";
 import { useState } from "react";
 import { Collapsible } from "../Collapsible/Collapsible";
+import { Comment } from "../Comment/Comment";
 export const PostCard = () => {
   const [showNewComment, setShowNewComment] = useState(false);
-
+  const likeCount = 0;
+  const commentCount = 1;
   return (
     <>
       <div className="postCard-container">
@@ -33,8 +35,33 @@ export const PostCard = () => {
             Schofield and i am awesomecHello I am Michael Schofield awesome.
           </p>
           <div className="postCard-body__details">
-            <p>Likes</p>
-            <p>Comments</p>
+            {/* i wanna have a top and bottom 
+            
+            top containst the like and comment buttons
+            the bottom contains the comments. So a button push activates the collapsible*/}
+            {likeCount ? (
+              <button className="postCard-options__likes">
+                {`${likeCount} like${commentCount > 1 ? "s" : ""}`}
+              </button>
+            ) : (
+              <p>0 Likes</p>
+            )}
+            {commentCount ? (
+              <Collapsible
+                label={`${commentCount} comment${commentCount > 1 ? "s" : ""}`}
+                clicked={() => {}}
+                styleName="postCard-options__comments"
+              >
+                <>
+                  <Comment />
+                  <Comment />
+                  <Comment />
+                  <Comment />
+                </>
+              </Collapsible>
+            ) : (
+              <p>0 Comments</p>
+            )}
           </div>
         </div>
         <div className="postCard-options">
