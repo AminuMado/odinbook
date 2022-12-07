@@ -1,0 +1,74 @@
+.comment-container {
+  display: flex;
+}
+.comment__userAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+  transition: all 0.3s ease;
+}
+.comment__userAvatar:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.comment__userAvatar:active {
+  transform: scale(1);
+}
+.comment-content-container {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  background-color: darkcyan;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+.comment-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.comment-header-left {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.comment-header-right .comment-header__deleteIcon {
+  width: 25px;
+  height: 25px;
+  transition: all 0.3s ease;
+}
+.comment-header__deleteIcon {
+  padding: 4px;
+  border-radius: 50%;
+  color: peru;
+}
+.comment-header__deleteIcon:hover {
+  background-color: red;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.comment-header__deleteIcon:active {
+  transform: scale(0.95);
+}
+
+.comment-header__username {
+  font-size: 0.8em;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease-out;
+  margin: 0;
+}
+.comment-header__username:hover {
+  border-bottom: 0.5px solid white;
+  cursor: pointer;
+}
+.comment-header__datePosted {
+  font-size: 0.7em;
+  color: #74b3eb;
+  margin: 0;
+}
+.comment-content-text {
+  font-size: 0.8em;
+  margin: 5px 0;
+}
