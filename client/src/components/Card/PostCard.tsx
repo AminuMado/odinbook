@@ -21,8 +21,10 @@ export const PostCard = () => {
               src={avatar_1}
               alt="avatar"
             />
-            <p className="postCard-header__username">MichealScofield</p>
-            <p className="postCard-header__datePosted">posted 2/12/2022</p>
+            <div className="postCard-header__userDetails">
+              <p className="postCard-header__username">MichealScofield</p>
+              <p className="postCard-header__datePosted">posted 2/12/2022</p>
+            </div>
           </div>
           <div className="postCard-header__right">
             <DeleteOutlineRoundedIcon className="postCard-header__deleteIcon" />
@@ -37,7 +39,7 @@ export const PostCard = () => {
             <div className="postCard-body__details-top">
               {likeCount ? (
                 <p className="postCard-options__likes">
-                  {`${likeCount} like${likeCount > 1 ? "s" : ""}`}
+                  {`${likeCount} Like${likeCount > 1 ? "s" : ""}`}
                 </p>
               ) : (
                 <p>0 Likes</p>
@@ -47,7 +49,7 @@ export const PostCard = () => {
                   className="postCard-options__comments"
                   onClick={() => setShowComments(!showComments)}
                 >
-                  {`${commentCount} like${commentCount > 1 ? "s" : ""}`}
+                  {`${commentCount} Comment${commentCount > 1 ? "s" : ""}`}
                 </p>
               ) : (
                 <p>0 Comments</p>
