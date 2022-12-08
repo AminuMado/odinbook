@@ -2,3 +2,9 @@
   font-family: "Exo 2";
   padding: 10px;
 }
+/* Media Query for Mobile Devices */
+@media (max-width: 495px) {
+  .App {
+    padding: 10px 10px 80px 10px;
+  }
+}
