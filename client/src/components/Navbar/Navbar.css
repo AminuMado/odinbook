@@ -44,7 +44,7 @@
 /* Media Query for Mobile Devices */
 @media (max-width: 495px) {
   .navbar {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
