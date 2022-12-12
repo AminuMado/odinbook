@@ -5,6 +5,7 @@ import { NewComment } from "../Comment/CommentForm";
 import { useState } from "react";
 import { Collapsible } from "../Collapsible/Collapsible";
 import { Comment } from "../Comment/Comment";
+import { AvatarModal } from "../Avatar/AvatarModal";
 export const PostCard = () => {
   const [showNewComment, setShowNewComment] = useState(false);
   const [showComments, setShowComments] = useState(false);
@@ -13,6 +14,7 @@ export const PostCard = () => {
   const commentCount = 1;
   return (
     <>
+      <AvatarModal />
       <div className="postCard-container">
         <div className="postCard-header">
           <div className="postCard-header__left">
