@@ -1,5 +1,6 @@
 import "./PostCard.css";
 import avatar_1 from "../../Assets/Images/1.jpg";
+import avatar_2 from "../../Assets/Images/2.jpg";
 import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import { NewComment } from "../Comment/CommentForm";
 import { useState } from "react";
@@ -10,11 +11,14 @@ export const PostCard = () => {
   const [showNewComment, setShowNewComment] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+  const [showAvatarModal, setShowAvatarModal] = useState(false);
   const likeCount = 0;
   const commentCount = 1;
   return (
     <>
-      <AvatarModal />
+      {showAvatarModal && (
+        <AvatarModal toggle={setShowAvatarModal} avatar={avatar_1} />
+      )}
       <div className="postCard-container">
         <div className="postCard-header">
           <div className="postCard-header__left">
@@ -22,6 +26,7 @@ export const PostCard = () => {
               className="postCard-header__userAvatar"
               src={avatar_1}
               alt="avatar"
+              onClick={() => setShowAvatarModal(!showAvatarModal)}
             />
             <div className="postCard-header__userDetails">
               <p className="postCard-header__username">MichealScofield</p>
@@ -61,9 +66,18 @@ export const PostCard = () => {
           <div className="postCard-body__details-bottom">
             <Collapsible isOpen={showComments}>
               <>
-                <Comment />
-                <Comment />
-                <Comment />
+                <Comment
+                  avatar={avatar_1}
+                  username="Michael Scofield"
+                  datePosted="2/12/2022"
+                  content="This is an example comment"
+                />
+                <Comment
+                  avatar={avatar_2}
+                  username="Mikahail Simon"
+                  datePosted="2/12/2022"
+                  content="This is an example comment"
+                />
               </>
             </Collapsible>
           </div>
