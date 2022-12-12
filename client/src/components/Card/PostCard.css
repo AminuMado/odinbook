@@ -26,15 +26,14 @@
   width: 90px;
   height: 90px;
   border-radius: 60px;
-  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  transition: border 0.3s ease;
 }
 .postCard-header__userAvatar:hover {
-  transform: scale(1.05);
+  border: 1px solid rebeccapurple;
   cursor: pointer;
 }
-.postCard-header__userAvatar:active {
-  transform: scale(1);
-}
+
 .postCard-header__userDetails {
   display: flex;
   flex-wrap: wrap;
