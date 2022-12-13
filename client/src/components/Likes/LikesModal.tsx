@@ -1,13 +1,28 @@
 import "./LikesModal.css";
-import avatar from "../../Assets/Images/3.jpg";
-export const LikesModal = () => {
+type props = {
+  toggle: React.Dispatch<React.SetStateAction<boolean>>;
+  likes: { avatar: string; username: string }[];
+};
+export const LikesModal = ({ toggle, likes }: props) => {
   return (
     <div className="likesModal">
-      {/* We should have an overlay and the username and avatar like */}
-      <div className="likesModal__overlay" />
-      <div className="likesModal__like">
-        <img src={avatar} alt="avatar" className="likesModal__avatar" />
-        <p className="likesModal__username">the example user</p>
+      <div
+        className="likesModal__overlay"
+        onClick={() => toggle((prev) => !prev)}
+      />
+      <div className="likesModal__likesContainer">
+        {likes.map((like) => {
+          return (
+            <div className="likesModal__like">
+              <img
+                src={like.avatar}
+                alt="avatar"
+                className="likesModal__avatar"
+              />
+              <p className="likesModal__username">{like.username}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
