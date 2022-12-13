@@ -7,11 +7,13 @@ import { useState } from "react";
 import { Collapsible } from "../Collapsible/Collapsible";
 import { Comment } from "../Comment/Comment";
 import { AvatarModal } from "../Avatar/AvatarModal";
+import { LikesModal } from "../Likes/LikesModal";
 export const PostCard = () => {
   const [showNewComment, setShowNewComment] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
+  const [showLikesModal, setShowLikesModal] = useState(false);
   const likeCount = 0;
   const commentCount = 1;
   return (
@@ -19,6 +21,7 @@ export const PostCard = () => {
       {showAvatarModal && (
         <AvatarModal toggle={setShowAvatarModal} avatar={avatar_1} />
       )}
+      {showLikesModal && <LikesModal />}
       <div className="postCard-container">
         <div className="postCard-header">
           <div className="postCard-header__left">
