@@ -14,14 +14,22 @@ export const PostCard = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [showLikesModal, setShowLikesModal] = useState(false);
-  const likeCount = 0;
+  const likeCount = 1;
   const commentCount = 1;
   return (
     <>
       {showAvatarModal && (
         <AvatarModal toggle={setShowAvatarModal} avatar={avatar_1} />
       )}
-      {showLikesModal && <LikesModal />}
+      {showLikesModal && (
+        <LikesModal
+          toggle={setShowLikesModal}
+          likes={[
+            { avatar: avatar_1, username: "Micheal Scofield" },
+            { avatar: avatar_2, username: "Mahatma Ghandi" },
+          ]}
+        />
+      )}
       <div className="postCard-container">
         <div className="postCard-header">
           <div className="postCard-header__left">
@@ -48,7 +56,10 @@ export const PostCard = () => {
           <div className="postCard-body__details">
             <div className="postCard-body__details-top">
               {likeCount ? (
-                <p className="postCard-options__likes">
+                <p
+                  className="postCard-options__likes"
+                  onClick={() => setShowLikesModal(!showLikesModal)}
+                >
                   {`${likeCount} Like${likeCount > 1 ? "s" : ""}`}
                 </p>
               ) : (
