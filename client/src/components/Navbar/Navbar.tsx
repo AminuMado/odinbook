@@ -5,26 +5,31 @@ import PersonIcon from "@mui/icons-material/Person";
 import LogoutIcon from "@mui/icons-material/Logout";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export const Navbar = () => {
   const [active, setActive] = useState("home");
 
   return (
     <nav className="navbar">
       <ul>
-        <li
-          className={active === "home" ? "active" : ""}
-          onClick={() => setActive("home")}
-        >
-          <HomeIcon />
-          Timeline
-        </li>
-        <li
-          className={active === "profile" ? "active" : ""}
-          onClick={() => setActive("profile")}
-        >
-          <PersonIcon />
-          Profile
-        </li>
+        <Link to="/home">
+          <li
+            className={active === "home" ? "active" : ""}
+            onClick={() => setActive("home")}
+          >
+            <HomeIcon />
+            Timeline
+          </li>
+        </Link>
+        <Link to="/profile">
+          <li
+            className={active === "profile" ? "active" : ""}
+            onClick={() => setActive("profile")}
+          >
+            <PersonIcon />
+            Profile
+          </li>
+        </Link>
         <li
           className={active === "notifications" ? "active" : ""}
           onClick={() => setActive("notifications")}
