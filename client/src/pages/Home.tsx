@@ -1,4 +1,3 @@
-import { Navbar } from "../components/Navbar/Navbar";
 import { Post } from "../components/Post/Post";
 export const Home = () => {
   /**
@@ -8,9 +7,8 @@ export const Home = () => {
    * should have the create post input
    */
   return (
-    <div>
-      <Navbar />
+    <>
       <Post />
-    </div>
+    </>
   );
 };
