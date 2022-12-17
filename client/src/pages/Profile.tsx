@@ -1,5 +1,6 @@
 import "./Profile.css";
 import avatar from "../Assets/Images/6.jpg";
+import { PostCard } from "../components/Card/PostCard";
 export const Profile = () => {
   return (
     <div className="profile">
@@ -17,7 +18,7 @@ export const Profile = () => {
                 interests are bringing world peace.
               </p>
             </div>
-            <button>Edit Profile</button>
+            <button className="profile__editprofile-btn">Edit Profile</button>
           </div>
         </div>
       </div>
@@ -26,7 +27,9 @@ export const Profile = () => {
         <h3>Followers</h3>
         <h3>Following</h3>
       </div>
-      <div className="profile__posts">posts goes here</div>
+      <div className="profile__posts">
+        <PostCard />
+      </div>
     </div>
   );
 };
