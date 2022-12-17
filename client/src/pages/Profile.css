@@ -1,5 +1,27 @@
+.profile__userInfo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: brown;
+  gap: 10px;
+}
+.profile__userInfo {
+  max-width: 470px;
+}
 .profile__userInfo_avatar {
   width: 350px;
   height: 350px;
   border-radius: 50%;
+}
+.profile__userInfo_top {
+  font-size: 2em;
+}
+.profile__userInfo_about {
+  margin: 0;
+  font-size: 2em;
+  /* text-align: center; */
+}
+.profile__userInfo_about_header {
+  margin: 0;
 }
