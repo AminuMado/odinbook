@@ -42,3 +42,32 @@
   font-size: 2em;
   background-color: saddlebrown;
 }
+.profile__tabs h3 {
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.underline {
+  display: inline-block;
+  position: relative;
+  color: gray;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: aliceblue;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
