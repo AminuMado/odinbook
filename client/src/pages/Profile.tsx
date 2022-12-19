@@ -1,7 +1,11 @@
 import "./Profile.css";
 import avatar from "../Assets/Images/6.jpg";
 import { PostCard } from "../components/Card/PostCard";
+import { useState } from "react";
+import { Followers } from "../components/Followers/Followers";
 export const Profile = () => {
+  const [activeTab, setActiveTab] = useState("Posts");
+  const tabs = ["Posts", "Followers", "Following"];
   return (
     <div className="profile">
       <div className="profile__userInfo-container">
@@ -23,36 +27,20 @@ export const Profile = () => {
         </div>
       </div>
       <div className="profile__tabs">
-        <h3>Posts</h3>
-        <h3>Followers</h3>
-        <h3>Following</h3>
+        {tabs.map((tab) => {
+          return (
+            <h3
+              onClick={() => setActiveTab(tab)}
+              className={activeTab === tab ? "active" : "underline"}
+            >
+              {tab}
+            </h3>
+          );
+        })}
       </div>
-      <div className="profile__posts">
-        <PostCard />
-      </div>
+      {activeTab === "Posts" ? <PostCard /> : null}
+      {activeTab === "Followers" ? <Followers /> : null}
+      {activeTab === "Following" ? <div>Following</div> : null}
     </div>
   );
 };
-
-// <div>
-//   {/* should have a couple things
-// 1. a display picture
-// 2. about section
-// 3. following and followers
-// 4. posts
-// 5. Check my previous star wars world project
-//  */}
-//   Hello Profile
-//   <div className="profile-container">
-//     <div className="profile-header">
-//       {/* your avatar
-//         your username
-//         your about
-//         your following
-//         your followers
-//          */}
-//       <img src={avatar} alt="avatar" />
-//     </div>
-//     <div className="profile-posts"></div>
-//   </div>
-// </div>
