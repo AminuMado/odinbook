@@ -1,0 +1,32 @@
+.following-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 160px);
+  border: 1px solid powderblue;
+  padding: 10px;
+  place-content: center;
+  gap: 1.5em;
+}
+
+.following__card {
+  display: grid;
+  place-items: center;
+  font-size: 1.5em;
+  margin: auto;
+}
+.following__card_avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+}
+.following__card button {
+  border-radius: 1rem;
+  border: none;
+  background-color: cadetblue;
+  color: black;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.following__card button:hover {
+  color: coral;
+}
