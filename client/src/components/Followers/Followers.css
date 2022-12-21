@@ -1,16 +1,32 @@
 .followers-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, 160px);
   border: 1px solid powderblue;
   padding: 10px;
-  place-items: center;
+  place-content: center;
+  gap: 1.5em;
 }
+
 .follower__card {
   display: grid;
   place-items: center;
+  font-size: 1.5em;
+  margin: auto;
 }
 .follower__card_avatar {
   width: 70px;
   height: 70px;
   border-radius: 35px;
+}
+.follower__card button {
+  border-radius: 1rem;
+  border: none;
+  background-color: cadetblue;
+  color: black;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+.follower__card button:hover {
+  color: coral;
 }
