@@ -3,6 +3,7 @@ import avatar from "../Assets/Images/6.jpg";
 import { PostCard } from "../components/Card/PostCard";
 import { useState } from "react";
 import { Followers } from "../components/Followers/Followers";
+import { Following } from "../components/Following/Following";
 export const Profile = () => {
   const [activeTab, setActiveTab] = useState("Posts");
   const tabs = ["Posts", "Followers", "Following"];
@@ -30,6 +31,7 @@ export const Profile = () => {
         {tabs.map((tab) => {
           return (
             <h3
+              key={tab}
               onClick={() => setActiveTab(tab)}
               className={activeTab === tab ? "active" : "underline"}
             >
@@ -40,7 +42,7 @@ export const Profile = () => {
       </div>
       {activeTab === "Posts" ? <PostCard /> : null}
       {activeTab === "Followers" ? <Followers /> : null}
-      {activeTab === "Following" ? <div>Following</div> : null}
+      {activeTab === "Following" ? <Following /> : null}
     </div>
   );
 };
