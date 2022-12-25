@@ -4,6 +4,7 @@ import avatar2 from "../../Assets/Images/5.jpg";
 import avatar3 from "../../Assets/Images/13.jpg";
 import avatar4 from "../../Assets/Images/4.jpg";
 import avatar5 from "../../Assets/Images/15.jpg";
+import { FollowerCard } from "./FollowerCard";
 export const Following = () => {
   // We are going to have an array of userId that represents the followers.This id is what we would use to get the username&photo of the
   // profile
@@ -23,27 +24,27 @@ export const Following = () => {
   // So this component just figures out who to display and nothing more
   const sampleFollowers = [
     {
-      userId: 1,
+      userId: "test1",
       username: "Tchalla Black Panther",
       avatar: avatar1,
     },
     {
-      userId: 2,
+      userId: "test2",
       username: "Random Lady",
       avatar: avatar2,
     },
     {
-      userId: 3,
+      userId: "test3",
       username: "Elden Lord",
       avatar: avatar3,
     },
     {
-      userId: 4,
+      userId: "test41",
       username: "Magnus Carlsen",
       avatar: avatar4,
     },
     {
-      userId: 5,
+      userId: "test51",
       username: "Pablo Escobar",
       avatar: avatar5,
     },
@@ -53,15 +54,12 @@ export const Following = () => {
     <div className="following-container">
       {sampleFollowers.map((follower) => {
         return (
-          <div className="following__card" key={follower.userId}>
-            <img
-              className="following__card_avatar"
-              src={follower.avatar}
-              alt="avatar"
-            />
-            <p>{follower.username}</p>
-            <button>Unfollow</button>
-          </div>
+          <FollowerCard
+            id={follower.userId}
+            key={follower.userId}
+            username={follower.username}
+            avatar={follower.avatar}
+          />
         );
       })}
     </div>
