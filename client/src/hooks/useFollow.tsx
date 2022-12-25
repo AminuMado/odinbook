@@ -5,7 +5,6 @@ export const useFollow = () => {
   const follow = async (id: string) => {
     setIsLoading(true);
     setError(null);
-
     const response = await fetch("this should be the db url", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -23,5 +22,25 @@ export const useFollow = () => {
       setIsLoading(false);
     }
   };
-  return { follow, isLoading, error };
+  const unFollow = async (id: string) => {
+    setIsLoading(true);
+    setError(null);
+    const response = await fetch("this should be the db url", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+
+    const json = await response.json();
+    if (!response.ok) {
+      setIsLoading(false);
+      setError(json.error);
+    }
+    if (response.ok) {
+      // basically all i want is to wait for the db to confirm it has removed the follower and thats it no need for the response.
+      // update the loading state
+      setIsLoading(false);
+    }
+  };
+  return { follow, unFollow, isLoading, error };
 };
