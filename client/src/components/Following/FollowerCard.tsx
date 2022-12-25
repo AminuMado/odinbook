@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useFollow } from "../../hooks/useFollow";
 import { useUserContext } from "../../hooks/useUserContext";
+import { Loader } from "../Loader";
 
 type props = {
   id: string;
@@ -9,6 +11,8 @@ type props = {
 export const FollowerCard = ({ id, avatar, username }: props) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const { state } = useUserContext();
+  const { follow, unFollow, isLoading } = useFollow();
+
   useEffect(() => {
     state.user.followers.forEach((item) => {
       if (item.userId === id) {
@@ -23,9 +27,29 @@ export const FollowerCard = ({ id, avatar, username }: props) => {
       <img className="following__card_avatar" src={avatar} alt="avatar" />
       <p>{username}</p>
       {isFollowing ? (
-        <button onClick={() => setIsFollowing(false)}>Unfollow</button>
+        isLoading ? (
+          <Loader />
+        ) : (
+          <button
+            onClick={() => {
+              follow(id);
+              setIsFollowing(false);
+            }}
+          >
+            Unfollow
+          </button>
+        )
+      ) : isLoading ? (
+        <Loader />
       ) : (
-        <button onClick={() => setIsFollowing(true)}>Follow</button>
+        <button
+          onClick={() => {
+            unFollow(id);
+            setIsFollowing(true);
+          }}
+        >
+          Follow
+        </button>
       )}
     </div>
   );
