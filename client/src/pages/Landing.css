@@ -9,6 +9,7 @@
   border-radius: 2rem;
   text-transform: uppercase;
   animation: flicker 1.5s infinite alternate;
+  text-align: center;
 }
 
 .Landing__title::-moz-selection {
