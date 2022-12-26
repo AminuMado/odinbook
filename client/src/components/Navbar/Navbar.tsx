@@ -6,9 +6,10 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLogout } from "../../hooks/useLogout";
 export const Navbar = () => {
   const [active, setActive] = useState("home");
-
+  const { logout } = useLogout();
   return (
     <nav className="navbar">
       <ul>
@@ -44,7 +45,7 @@ export const Navbar = () => {
           <LanguageIcon />
           Explore
         </li>
-        <li className={active === "logout" ? "active" : ""}>
+        <li className={active === "logout" ? "active" : ""} onClick={logout}>
           <LogoutIcon />
           Logout
         </li>
