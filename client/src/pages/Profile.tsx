@@ -4,6 +4,7 @@ import { PostCard } from "../components/Card/PostCard";
 import { useState } from "react";
 import { Followers } from "../components/Followers/Followers";
 import { Following } from "../components/Following/Following";
+import ManageAccountsTwoToneIcon from "@mui/icons-material/ManageAccountsTwoTone";
 export const Profile = () => {
   const [activeTab, setActiveTab] = useState("Posts");
   const tabs = ["Posts", "Followers", "Following"];
@@ -23,7 +24,8 @@ export const Profile = () => {
                 interests are bringing world peace.
               </p>
             </div>
-            <button className="profile__editprofile-btn">Edit Profile</button>
+
+            <ManageAccountsTwoToneIcon className="profile__editprofile-btn" />
           </div>
         </div>
       </div>
