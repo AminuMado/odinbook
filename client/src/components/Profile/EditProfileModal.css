@@ -1,0 +1,67 @@
+.editProfileModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+.editProfileModal__overlay {
+  display: flex;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+.editProfileModalForm-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aquamarine;
+  z-index: 3;
+  width: 700px;
+  height: 700px;
+  padding: 10px;
+}
+.editProfileModal__avatar {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+.editProfileModalForm-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7.5px;
+  color: black;
+  font-size: 2em;
+}
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 691px) and (max-width: 840px) {
+  .editProfileModal__avatar {
+    width: 500px;
+    height: 500px;
+  }
+}
+@media (min-width: 496px) and (max-width: 690px) {
+  .editProfileModal__avatar {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 495px) {
+  .editProfileModal__avatar {
+    width: 350px;
+    height: 350px;
+  }
+}
