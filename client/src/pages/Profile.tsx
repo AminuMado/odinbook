@@ -9,9 +9,13 @@ import { EditProfileModal } from "../components/Profile/EditProfileModal";
 export const Profile = () => {
   const [activeTab, setActiveTab] = useState("Posts");
   const tabs = ["Posts", "Followers", "Following"];
+  const [showEditProfileModal, setShowEditProfileModal] = useState(false);
+
   return (
     <>
-      <EditProfileModal />
+      {showEditProfileModal && (
+        <EditProfileModal toggle={setShowEditProfileModal} />
+      )}
       <div className="profile">
         <div className="profile__userInfo-container">
           <img src={avatar} alt="avatar" className="profile__userInfo_avatar" />
@@ -28,7 +32,10 @@ export const Profile = () => {
                 </p>
               </div>
 
-              <ManageAccountsTwoToneIcon className="profile__editprofile-btn" />
+              <ManageAccountsTwoToneIcon
+                className="profile__editprofile-btn"
+                onClick={() => setShowEditProfileModal(true)}
+              />
             </div>
           </div>
         </div>
