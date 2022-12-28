@@ -10,6 +10,8 @@ export const EditProfileModal = () => {
   const { state } = useUserContext();
   const [username, setUsername] = useState(state.user.username);
   const [about, setAbout] = useState(state.user.about);
+  const [file, setFile] = useState<Blob | MediaSource | null>(null);
+
   const [avatar, setAvatar] = useState(state.user.avatar);
   // This component should have the capability to edit the profile, so chaning your profile picture and username and about me
   return (
@@ -22,9 +24,23 @@ export const EditProfileModal = () => {
       <div className="editProfileModalForm-container">
         <img className="editProfileModal__avatar" src={avatar} alt="avatar" />
         <form>
-          <button type="button" id="avatar">
+          <label htmlFor="fileInput" id="avatar">
             Change Avatar
-          </button>
+          </label>
+          <input
+            type="file"
+            hidden
+            name="fileInput"
+            id="fileInput"
+            accept=".png,.jpeg,.jpg"
+            onChange={(e) => {
+              if (e.target.files) {
+                setFile(e.target.files[0]);
+                if (!file) return;
+                setAvatar(URL.createObjectURL(file));
+              }
+            }}
+          />
           <label htmlFor="username">Username</label>
           <input
             className="editProfileModalForm__input"
