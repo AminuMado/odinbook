@@ -12,6 +12,7 @@ import { testUser8 } from "../testUser";
 import { testUser9 } from "../testUser";
 const testUser = {
   userId: testUser1.userId,
+  about: testUser1.about,
   username: testUser1.username,
   avatar: testUser1.avatar,
   followers: [
@@ -31,6 +32,7 @@ type user = {
   userId: string;
   username: string;
   avatar: string;
+  about: string;
   followers: { userId: string; username: string; avatar: string }[];
   following: { userId: string; username: string; avatar: string }[];
 };
