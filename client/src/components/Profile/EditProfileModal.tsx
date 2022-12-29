@@ -9,8 +9,14 @@ export const EditProfileModal = ({ toggle }: props) => {
   const { state } = useUserContext();
   const [username, setUsername] = useState(state.user.username);
   const [about, setAbout] = useState(state.user.about);
-  const [file, setFile] = useState<Blob | MediaSource | null>(null);
   const [avatar, setAvatar] = useState(state.user.avatar);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let file: Blob | MediaSource | null = null;
+    if (e.target.files) {
+      file = e.target.files[0];
+      setAvatar(URL.createObjectURL(file));
+    }
+  };
   // This component should have the capability to edit the profile, so chaning your profile picture and username and about me
   return (
     <div className="editProfileModal">
@@ -22,7 +28,7 @@ export const EditProfileModal = ({ toggle }: props) => {
       <div className="editProfileModalForm-container">
         <img className="editProfileModal__avatar" src={avatar} alt="avatar" />
         <form>
-          <label htmlFor="fileInput" id="avatar">
+          <label htmlFor="fileInput" className="form__changeAvatar">
             Change Avatar
           </label>
           <input
@@ -31,13 +37,7 @@ export const EditProfileModal = ({ toggle }: props) => {
             name="fileInput"
             id="fileInput"
             accept=".png,.jpeg,.jpg"
-            onChange={(e) => {
-              if (e.target.files) {
-                setFile(e.target.files[0]);
-                if (!file) return;
-                setAvatar(URL.createObjectURL(file));
-              }
-            }}
+            onChange={(e) => handleFileChange(e)}
           />
           <label htmlFor="username">Username</label>
           <input
