@@ -60,6 +60,7 @@
     height: 70px;
     padding: 2px;
     background-color: rebeccapurple;
+    z-index: 2;
   }
   .navbar ul li {
     font-size: 1.4rem;
