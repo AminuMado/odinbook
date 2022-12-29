@@ -21,15 +21,16 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
+
 .editProfileModalForm-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: aquamarine;
   z-index: 3;
-  width: 700px;
-  height: 700px;
-  padding: 10px;
+  border-radius: 15px;
+  padding: 25px;
+  gap: 8px;
 }
 .editProfileModal__avatar {
   width: 400px;
@@ -43,6 +44,48 @@
   gap: 7.5px;
   color: black;
   font-size: 2em;
+}
+.form__changeAvatar {
+  border: 2px black dashed;
+  padding: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.form__changeAvatar:hover {
+  color: blueviolet;
+}
+.form__changeAvatar:active {
+  transform: scale(0.95);
+}
+.editProfileModalForm-container form input {
+  width: 15em;
+  padding: 12px;
+  color: black;
+  background-color: #f5f5f5;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: break-word;
+  border: none;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.editProfileModalForm-container form textarea {
+  width: 35em;
+  height: 5em;
+  padding: 12px 20px;
+  color: #495057;
+  background-color: #f5f5f5;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  word-break: break-word;
+  border: none;
+  border-radius: 0.375rem;
+  resize: none;
+  transition: all 0.3s ease;
 }
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 691px) and (max-width: 840px) {
