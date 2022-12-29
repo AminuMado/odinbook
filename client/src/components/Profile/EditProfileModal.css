@@ -90,21 +90,33 @@
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 691px) and (max-width: 840px) {
   .editProfileModal__avatar {
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
+  }
+  .editProfileModalForm-container form textarea {
+    width: 25em;
+    height: 5em;
   }
 }
 @media (min-width: 496px) and (max-width: 690px) {
   .editProfileModal__avatar {
-    width: 450px;
-    height: 450px;
+    width: 250px;
+    height: 250px;
+  }
+  .editProfileModalForm-container form textarea {
+    width: 18em;
+    height: 7em;
   }
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 495px) {
   .editProfileModal__avatar {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
+  }
+  .editProfileModalForm-container form textarea {
+    width: 14.5em;
+    height: 7em;
   }
 }
