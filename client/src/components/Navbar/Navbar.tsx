@@ -31,13 +31,15 @@ export const Navbar = () => {
             Profile
           </li>
         </Link>
-        <li
-          className={active === "notifications" ? "active" : ""}
-          onClick={() => setActive("notifications")}
-        >
-          <NotificationsIcon />
-          Notifications
-        </li>
+        <Link to="/notification">
+          <li
+            className={active === "notifications" ? "active" : ""}
+            onClick={() => setActive("notifications")}
+          >
+            <NotificationsIcon />
+            Notifications
+          </li>
+        </Link>
         <li
           className={active === "explore" ? "active" : ""}
           onClick={() => setActive("explore")}
