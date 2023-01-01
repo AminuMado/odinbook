@@ -9,17 +9,26 @@ export const Notification = () => {
     Another thing is how do i clear a notification?
     should i have a button? or when i open the page?
      */}
-      <div>
-        <p> Micheal Scholfield followed you</p>
-        <p>2/12/2022</p>
+      <div className="notification-container notification-unread">
+        <div className="notification__content">
+          <p> Micheal Scholfield followed you</p>
+          <p>31/12/2022</p>
+        </div>
+        <button>Mark as Read</button>
       </div>
-      <div>
-        <p> Ghandi liked your post</p>
-        <p>2/12/2022</p>
+      <div className="notification-container ">
+        <div className="notification__content">
+          <p> Ghandi liked your post</p>
+          <p>31/12/2022</p>
+        </div>
+        <button>Mark as Read</button>
       </div>
-      <div>
-        <p> Lincon added a comment to your post</p>
-        <p>2/12/2022</p>
+      <div className="notification-container notification-unread">
+        <div className="notification__content">
+          <p> Lincon added a comment to your post</p>
+          <p>31/12/2022</p>
+        </div>
+        <button>Mark as Read</button>
       </div>
     </div>
   );
