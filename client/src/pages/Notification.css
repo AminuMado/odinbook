@@ -1,0 +1,15 @@
+.notification-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  font-size: 2em;
+}
+.notification-unread {
+  background-color: gray;
+}
+.notification__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
