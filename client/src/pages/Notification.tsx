@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "./Notification.css";
 export const Notification = () => {
+  const [isRead, setIsRead] = useState(true);
   return (
     <div>
       {/* This component should show notifications
@@ -9,26 +11,53 @@ export const Notification = () => {
     Another thing is how do i clear a notification?
     should i have a button? or when i open the page?
      */}
-      <div className="notification-container notification-unread">
+      <div
+        className={`notification-container ${
+          isRead ? "notification-unread" : "notification-read"
+        } `}
+      >
         <div className="notification__content">
           <p> Micheal Scholfield followed you</p>
           <p>31/12/2022</p>
         </div>
-        <button>Mark as Read</button>
+        {isRead && (
+          <div
+            className="notification__markAsRead"
+            onClick={() => setIsRead(false)}
+          />
+        )}
       </div>
-      <div className="notification-container ">
+      <div
+        className={`notification-container ${
+          isRead ? "notification-unread" : ""
+        } `}
+      >
         <div className="notification__content">
           <p> Ghandi liked your post</p>
           <p>31/12/2022</p>
         </div>
-        <button>Mark as Read</button>
+        {isRead && (
+          <div
+            className="notification__markAsRead"
+            onClick={() => setIsRead(false)}
+          />
+        )}
       </div>
-      <div className="notification-container notification-unread">
+      <div
+        className={`notification-container ${
+          isRead ? "notification-unread" : ""
+        } `}
+      >
         <div className="notification__content">
           <p> Lincon added a comment to your post</p>
           <p>31/12/2022</p>
         </div>
-        <button>Mark as Read</button>
+        {isRead && (
+          <div
+            className="notification__markAsRead"
+            onClick={() => setIsRead(false)}
+          />
+        )}
       </div>
     </div>
   );
