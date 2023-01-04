@@ -10,6 +10,9 @@ import { testUser6 } from "../testUser";
 import { testUser7 } from "../testUser";
 import { testUser8 } from "../testUser";
 import { testUser9 } from "../testUser";
+import { testNotification1 } from "../testUser";
+import { testNotification2 } from "../testUser";
+import { testNotification3 } from "../testUser";
 const testUser = {
   userId: testUser1.userId,
   about: testUser1.about,
@@ -27,6 +30,11 @@ const testUser = {
     { ...testUser8 },
     { ...testUser9 },
   ],
+  notifications: [
+    { ...testNotification1 },
+    { ...testNotification2 },
+    { ...testNotification3 },
+  ],
 };
 type user = {
   userId: string;
@@ -35,6 +43,12 @@ type user = {
   about: string;
   followers: { userId: string; username: string; avatar: string }[];
   following: { userId: string; username: string; avatar: string }[];
+  notifications: {
+    id: string;
+    type: string;
+    userId: string;
+    postId: string | null;
+  }[];
 };
 
 // An interface for our user state
