@@ -79,3 +79,25 @@ export const testUser10 = {
   username: "Admin",
   avatar: avatar10,
 };
+
+export const testNotification1 = {
+  id: "1",
+  userId: "thisistheuserId",
+  postId: null,
+  // this is a follow notification
+  type: "follow",
+};
+export const testNotification2 = {
+  id: "2",
+  userId: "thisistheuserId2",
+  postId: "thisisthepostId2",
+  // this is a comment notification
+  type: "comment",
+};
+export const testNotification3 = {
+  id: "3",
+  userId: "thisistheuserId3",
+  postId: "thisisthepostId3",
+  // this is a like notification
+  type: "like",
+};
