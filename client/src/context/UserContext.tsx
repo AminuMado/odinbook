@@ -48,6 +48,7 @@ type user = {
     type: string;
     userId: string;
     postId: string | null;
+    isSeen: boolean;
   }[];
 };
 
