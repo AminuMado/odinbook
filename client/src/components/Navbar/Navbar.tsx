@@ -7,9 +7,14 @@ import LanguageIcon from "@mui/icons-material/Language";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLogout } from "../../hooks/useLogout";
+import { useUserContext } from "../../hooks/useUserContext";
 export const Navbar = () => {
   const [active, setActive] = useState("home");
   const { logout } = useLogout();
+  const { state } = useUserContext();
+  const unSeenNotification = state.user.notifications.some(
+    (notification) => notification.isSeen === false
+  );
   return (
     <nav className="navbar">
       <ul>
@@ -39,6 +44,7 @@ export const Navbar = () => {
             <NotificationsIcon />
             Notifications
           </li>
+          {unSeenNotification && <p className="notificationCount" />}
         </Link>
         <li
           className={active === "explore" ? "active" : ""}
