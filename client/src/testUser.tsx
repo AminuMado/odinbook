@@ -86,6 +86,7 @@ export const testNotification1 = {
   postId: null,
   // this is a follow notification
   type: "follow",
+  isSeen: true,
 };
 export const testNotification2 = {
   id: "2",
@@ -93,6 +94,7 @@ export const testNotification2 = {
   postId: "thisisthepostId2",
   // this is a comment notification
   type: "comment",
+  isSeen: false,
 };
 export const testNotification3 = {
   id: "3",
@@ -100,4 +102,5 @@ export const testNotification3 = {
   postId: "thisisthepostId3",
   // this is a like notification
   type: "like",
+  isSeen: true,
 };
