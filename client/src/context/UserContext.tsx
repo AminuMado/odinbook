@@ -36,31 +36,38 @@ const testUser = {
     { ...testNotification3 },
   ],
 };
+type follower = {
+  userId: string;
+  username: string;
+  avatar: string;
+};
+type notification = {
+  id: string;
+  type: string;
+  userId: string;
+  postId: string | null;
+  isSeen: boolean;
+};
 type user = {
   userId: string;
   username: string;
   avatar: string;
   about: string;
-  followers: { userId: string; username: string; avatar: string }[];
-  following: { userId: string; username: string; avatar: string }[];
-  notifications: {
-    id: string;
-    type: string;
-    userId: string;
-    postId: string | null;
-    isSeen: boolean;
-  }[];
+  followers: follower[];
+  following: follower[];
+  notifications: notification[];
 };
 
 // An interface for our user state
 interface UserState {
   user: user;
 }
-// An interface for our reducer actions
-interface UserAction {
-  type: "UPDATE_FOLLOWERS" | "UPDATE_FOLLOWING";
-  payload: { userId: string; username: string; avatar: string }[];
-}
+// An type for our reducer actions
+type UserAction =
+  | { type: "UPDATE_FOLLOWERS"; payload: follower[] }
+  | { type: "UPDATE_FOLLOWING"; payload: follower[] }
+  | { type: "UPDATE_NOTIFICATION"; payload: notification[] };
+
 // Our reducer function
 function userReducer(state: UserState, action: UserAction) {
   const { type, payload } = action;
@@ -69,6 +76,8 @@ function userReducer(state: UserState, action: UserAction) {
       return { user: { ...state.user, followers: payload } };
     case "UPDATE_FOLLOWING":
       return { user: { ...state.user, following: payload } };
+    case "UPDATE_NOTIFICATION":
+      return { user: { ...state.user, notifications: payload } };
     default:
       return state;
   }
