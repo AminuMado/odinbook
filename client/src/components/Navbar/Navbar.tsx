@@ -12,7 +12,7 @@ export const Navbar = () => {
   const [active, setActive] = useState("home");
   const { logout } = useLogout();
   const { state } = useUserContext();
-  const unSeenNotification = state.user.notifications.some(
+  const newNotification = state.user.notifications.some(
     (notification) => notification.isSeen === false
   );
   return (
@@ -36,15 +36,15 @@ export const Navbar = () => {
             Profile
           </li>
         </Link>
-        <Link to="/notification">
+        <Link to="/notification" className="navNotification-container">
           <li
             className={active === "notifications" ? "active" : ""}
             onClick={() => setActive("notifications")}
           >
             <NotificationsIcon />
             Notifications
+            {newNotification && <p className="newNotification" />}
           </li>
-          {unSeenNotification && <p className="notificationCount" />}
         </Link>
         <li
           className={active === "explore" ? "active" : ""}
