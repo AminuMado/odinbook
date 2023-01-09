@@ -5,7 +5,7 @@ import { Home } from "./pages/Home";
 import { useAuthContext } from "./hooks/useAuthContext";
 import { Profile } from "./pages/Profile";
 import { Navbar } from "./components/Navbar/Navbar";
-import { Notification } from "./pages/Notification";
+import { Notifications } from "./pages/Notifications";
 function App() {
   const { state } = useAuthContext();
   const user = state.user;
@@ -27,7 +27,7 @@ function App() {
           />
           <Route
             path="/notification"
-            element={user ? <Notification /> : <Navigate to="/" />}
+            element={user ? <Notifications /> : <Navigate to="/" />}
           />
         </Routes>
       </div>
