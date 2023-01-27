@@ -46,13 +46,15 @@ export const Navbar = () => {
             {newNotification && <p className="newNotification" />}
           </li>
         </Link>
-        <li
-          className={active === "explore" ? "active" : ""}
-          onClick={() => setActive("explore")}
-        >
-          <LanguageIcon />
-          Explore
-        </li>
+        <Link to="/explore">
+          <li
+            className={active === "explore" ? "active" : ""}
+            onClick={() => setActive("explore")}
+          >
+            <LanguageIcon />
+            Explore
+          </li>
+        </Link>
         <li className={active === "logout" ? "active" : ""} onClick={logout}>
           <LogoutIcon />
           Logout
