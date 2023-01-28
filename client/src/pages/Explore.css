@@ -1,0 +1,9 @@
+.explore--container {
+  font-size: 3em;
+}
+.explore--nav-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
