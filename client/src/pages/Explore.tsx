@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { ExploreMessage } from "../components/Explore/ExploreMessage";
+import { ExplorePosts } from "../components/Explore/ExplorePosts";
+import { ExploreUsers } from "../components/Explore/ExploreUsers";
 import "./Explore.css";
 export const Explore = () => {
   // So we want to have a all users mode. So you can see all active users.
@@ -11,11 +14,11 @@ export const Explore = () => {
   const renderTab = (tab: string) => {
     switch (tab) {
       case "Users":
-        return <div>All Users</div>;
+        return <ExploreUsers />;
       case "Posts":
-        return <div>Posts</div>;
+        return <ExplorePosts />;
       default:
-        return <div>This is the fourth wall message component</div>;
+        return <ExploreMessage />;
     }
   };
   return (
