@@ -1,8 +1,33 @@
+import { useState } from "react";
 import "./Explore.css";
 export const Explore = () => {
   // So we want to have a all users mode. So you can see all active users.
-  // Most liked Posts
-  // Most commented Posts
+  // you can sort the users From A-Z, most followers , most following, date Joined,oldest, and latest
+  // Posts
+  // you can sort the posts into oldest, latest, most comments, most liked, or most engaged
   // Personal Message of how the site works or a message from me to the user with some gifs etc
-  return <div>Hello Explore</div>;
+  const [activeTab, setActiveTab] = useState("");
+  const tabs = ["Users", "Posts"];
+  const renderTab = (tab: string) => {
+    switch (tab) {
+      case "Users":
+        return <div>All Users</div>;
+      case "Posts":
+        return <div>Posts</div>;
+      default:
+        return <div>This is the fourth wall message component</div>;
+    }
+  };
+  return (
+    <div className="explore--container">
+      <nav className="explore--nav-container">
+        <ul>
+          {tabs.map((tab) => {
+            return <li onClick={() => setActiveTab(tab)}>{tab}</li>;
+          })}
+        </ul>
+      </nav>
+      <div className="explore-details">{renderTab(activeTab)}</div>
+    </div>
+  );
 };
