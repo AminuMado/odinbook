@@ -1,9 +1,27 @@
 .explore--container {
   font-size: 3em;
+  max-width: 850px;
+  display: grid;
+  place-items: center;
 }
+
 .explore--nav-container ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style: none;
+  padding: 0 5px;
+  gap: 8px;
+}
+.explore--nav-container ul li {
+  transition: all 0.75s ease;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.explore--nav-container ul li.active {
+  background-color: orange;
+}
+.explore--nav-container ul li:hover {
+  background-color: orange;
 }
