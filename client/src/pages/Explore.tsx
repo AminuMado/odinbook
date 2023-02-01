@@ -26,7 +26,14 @@ export const Explore = () => {
       <nav className="explore--nav-container">
         <ul>
           {tabs.map((tab) => {
-            return <li onClick={() => setActiveTab(tab)}>{tab}</li>;
+            return (
+              <li
+                className={activeTab === tab ? "active" : ""}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </li>
+            );
           })}
         </ul>
       </nav>
