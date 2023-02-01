@@ -1,0 +1,96 @@
+.quote-container {
+  text-align: center;
+  position: relative;
+  max-width: 850px;
+}
+blockquote {
+  color: rgb(206, 192, 192);
+  text-shadow: -1px 1px #555;
+  font-style: italic;
+  position: relative;
+  font-size: 2.5em;
+}
+
+.quotemark_left {
+  position: absolute;
+  left: -90px;
+  top: -55px;
+  font-size: 12rem;
+  color: #5d6061;
+  /* color: #336699; */
+
+  font-style: normal;
+}
+.quotemark_right {
+  position: absolute;
+  right: -90px;
+  bottom: -90px;
+  font-size: 12rem;
+  color: #5d6061;
+  color: #336699;
+
+  font-style: normal;
+}
+small {
+  font-size: 2rem;
+  color: #336699;
+  /* color: #797b7c; */
+  position: relative;
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 691px) and (max-width: 950px) {
+  .quote-container {
+    width: 600px;
+  }
+  blockquote {
+    font-size: 2em;
+  }
+  .quotemark_left {
+    font-size: 10rem;
+    left: -80px;
+  }
+  .quotemark_right {
+    font-size: 10rem;
+    right: -80px;
+  }
+}
+@media (min-width: 496px) and (max-width: 690px) {
+  .quote-container {
+    width: 450px;
+  }
+  blockquote {
+    font-size: 1.5em;
+  }
+  .quotemark_left {
+    font-size: 9rem;
+    left: -60px;
+  }
+  .quotemark_right {
+    font-size: 9rem;
+    right: -60px;
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 495px) {
+  .quote-container {
+    width: 400px;
+    margin-top: 100px;
+  }
+  blockquote {
+    font-size: 1.6em;
+    margin: 10px;
+  }
+  .quotemark_left {
+    font-size: 7rem;
+    left: -18px;
+  }
+  .quotemark_right {
+    font-size: 7rem;
+    right: -18px;
+  }
+  small {
+    top: 50px;
+  }
+}
