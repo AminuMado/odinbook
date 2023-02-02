@@ -28,6 +28,7 @@ export const Explore = () => {
           {tabs.map((tab) => {
             return (
               <li
+                key={tab}
                 className={activeTab === tab ? "active" : ""}
                 onClick={() => setActiveTab(tab)}
               >
