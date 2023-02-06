@@ -1,0 +1,66 @@
+.exploreUserCard-container {
+  max-width: 220px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 4px;
+}
+.exploreUserCard-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.exploreUserCard-top__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 25%;
+}
+.exploreUserCard-top__username {
+  font-size: 20px;
+}
+.exploreUserCard-middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.exploreUserCard-middle__followers {
+  font-size: 15px;
+}
+.exploreUserCard-middle__following {
+  font-size: 15px;
+}
+.exploreUserCard-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.exploreUserCard-bottom__date {
+  font-size: 15px;
+  font-style: italic;
+  color: gray;
+}
+.exploerUserCard-bottom__button {
+  background-color: rgb(10, 112, 196);
+  border-radius: 1rem;
+  border: none;
+  color: black;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100px;
+  font-size: 20px;
+}
+.exploerUserCard-bottom__button:hover {
+  color: orchid;
+}
+.exploreUserCard-container p {
+  margin: 0;
+}
