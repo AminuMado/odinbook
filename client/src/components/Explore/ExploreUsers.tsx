@@ -1,5 +1,6 @@
 import "./ExploreUsers.css";
 import { useState } from "react";
+import { ExploreUserCard } from "./ExploreUserCard";
 export const ExploreUsers = () => {
   const [activeTab, setActiveTab] = useState("Date");
   const tabs = ["Date", "Followers", "Following"];
@@ -26,6 +27,9 @@ export const ExploreUsers = () => {
       </div>
       <div className="exploreUsers__details">
         {/* The explore user card goes here */}
+        <ExploreUserCard />
+        <ExploreUserCard />
+        <ExploreUserCard />
       </div>
     </div>
   );
