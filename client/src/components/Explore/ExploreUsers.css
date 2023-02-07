@@ -1,6 +1,7 @@
 .exploreUsers-container {
   width: 800px;
   max-width: 840px;
+  transition: all 0.5s ease;
 }
 .exploreUsers__tab {
   display: flex;
@@ -26,4 +27,31 @@
 }
 .exploreUsers__tab li:active {
   transform: scale(0.95);
+}
+.exploreUsers__details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 225px);
+  border: 1px solid powderblue;
+  padding: 10px;
+  place-content: center;
+  gap: 1em;
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 691px) and (max-width: 840px) {
+  .exploreUsers-container {
+    width: 600px;
+  }
+}
+@media (min-width: 496px) and (max-width: 690px) {
+  .exploreUsers-container {
+    width: 440px;
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 495px) {
+  .exploreUsers-container {
+    width: 400px;
+  }
 }
