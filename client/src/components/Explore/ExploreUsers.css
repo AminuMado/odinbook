@@ -16,12 +16,17 @@
   transition: all 0.75s ease;
   padding: 10px;
   cursor: pointer;
+  border: 5px solid transparent;
   border-radius: 10px;
 }
-
-.exploreUsers__tab li.active {
-  background-color: rgb(60, 6, 114);
+.exploreUsers__tab li.active.desc {
+  border-bottom: 5px solid rgb(136, 136, 255);
 }
+
+.exploreUsers__tab li.active.asc {
+  border-top: 5px solid orange;
+}
+
 .exploreUsers__tab li:hover {
   background-color: rgb(60, 6, 114);
 }
