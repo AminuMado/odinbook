@@ -2,7 +2,7 @@ import "./ExploreUsers.css";
 import { useState } from "react";
 import { ExploreUserCard } from "./ExploreUserCard";
 export const ExploreUsers = () => {
-  const [activeTab, setActiveTab] = useState({ tab: "date", sorting: "desc" });
+  const [activeTab, setActiveTab] = useState({ tab: "Date", sorting: "desc" });
   const tabs = ["Date", "Followers", "Following"];
   const handleClick = (tab: string) => {
     // first condition is to check if the current tab is clicked
