@@ -1,22 +1,47 @@
 import { useState } from "react";
 import "./ExplorePosts.css";
 export const ExplorePosts = () => {
-  const [activeTab, setActiveTab] = useState("");
-  const tabs = ["Date", "Comments", "Likes"]; // you have to update me
-
+  const [activeTab, setActiveTab] = useState({ tab: "Date", sorting: "desc" });
+  const tabs = ["Date", "Likes", "Comments"];
+  const handleClick = (tab: string) => {
+    // first condition is to check if the current tab is clicked
+    // if thats the case we just wanna update the sorting;
+    // if its a different tab then we wanna update the tab and switch the sorting to the default
+    if (tab === activeTab.tab) {
+      const nextSorting = activeTab.sorting === "desc" ? "asc" : "desc";
+      const update = { tab: tab, sorting: nextSorting };
+      setActiveTab(update);
+    } else {
+      const update = { tab: tab, sorting: "desc" };
+      setActiveTab(update);
+    }
+  };
   return (
-    <div>
-      {/* A tab containg the sorting icon and the list of things to be done to the page */}
-      {/* A container that has the loading animation until a fetch is done if it fails there should be an error message or a gif depicting something went wrong */}
-      {/* Since its a post page should i have a summary post place holder so that if you wanna engage you gotta to to the post details page. or just have the post itself */}
-      <nav className="explorePosts-nav">
-        <ul>
-          {tabs.map((tab) => {
-            return <li onClick={() => setActiveTab(tab)}>{tab}</li>;
-          })}
-        </ul>
-      </nav>
-      <div className="explorePosts-details"></div>
+    <div className="explorePosts-container">
+      {/* A tab containing the various sort categories */}
+      {/* A container containg the users in their various sort modes all users(in alpabeticall order), the OGs (first to join), new to join,most followers, most following */}
+      {/* A loading icon when a call to the db is made no saving state locally */}
+      {/* I want to have  */}
+      <div className="explorePosts__tab">
+        {tabs.map((tab) => {
+          return (
+            <li
+              key={tab}
+              className={
+                activeTab.tab === tab ? "active " + activeTab.sorting : ""
+              }
+              onClick={() => {
+                handleClick(tab);
+              }}
+            >
+              {tab}
+            </li>
+          );
+        })}
+      </div>
+      <div className="explorePosts__details">
+        {/* The post cards go here */}
+      </div>
     </div>
   );
 };
