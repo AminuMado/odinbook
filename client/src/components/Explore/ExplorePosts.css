@@ -35,7 +35,7 @@
 }
 .explorePosts__details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 225px);
+  grid-template-columns: repeat(auto-fit, 335px);
   border: 1px solid powderblue;
   padding: 10px;
   place-content: center;
