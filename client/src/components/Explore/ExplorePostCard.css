@@ -1,0 +1,104 @@
+.explorePostCard-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid springgreen;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 330px;
+  border-radius: 15px;
+}
+.explorePostCard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 100%; */
+  border-bottom: 1px solid #6c757d;
+  /* padding-bottom: 5px; */
+  background-color: goldenrod;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 2px;
+}
+.explorePostCard-header__left {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+}
+.explorePostCard-header__userAvatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 60px;
+  border: 1px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.explorePostCard-header__userDetails {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px;
+}
+.explorePostCard-header__username {
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease-out;
+  margin: 2px;
+}
+.explorePostCard-header__username:hover {
+  border-bottom: 0.5px solid white;
+  cursor: pointer;
+}
+.explorePostCard-header__datePosted {
+  font-size: 1.5rem;
+  color: #6c757d;
+  margin: 2px;
+}
+
+.explorePostCard-body {
+  background-color: #6c757d;
+  max-width: 810px;
+  font-size: 2rem;
+  padding: 0px 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.explorePostCard-body__content {
+  display: flex;
+  word-break: break-word;
+  text-align: justify;
+}
+.explorePostCard-body__details {
+  border-top: 1px solid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+.explorePostCard-body__likes,
+.explorePostCard-body__comments {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.explorePostCard-body__likes .likeIcon {
+  width: 30px;
+  height: 30px;
+}
+.explorePostCard-body__likes .likeCount {
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0;
+}
+.explorePostCard-body__comments .commentIcon {
+  width: 30px;
+  height: 30px;
+}
+.explorePostCard-body__comments .commentCount {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+}
