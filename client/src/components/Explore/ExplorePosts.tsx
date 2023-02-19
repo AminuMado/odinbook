@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ExplorePostCard } from "./ExplorePostCard";
 import "./ExplorePosts.css";
 export const ExplorePosts = () => {
   const [activeTab, setActiveTab] = useState({ tab: "Date", sorting: "desc" });
@@ -41,6 +42,10 @@ export const ExplorePosts = () => {
       </div>
       <div className="explorePosts__details">
         {/* The post cards go here */}
+        <ExplorePostCard />
+        <ExplorePostCard />
+        <ExplorePostCard />
+        <ExplorePostCard />
       </div>
     </div>
   );
