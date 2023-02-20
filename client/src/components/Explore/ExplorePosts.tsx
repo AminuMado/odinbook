@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSort } from "../../hooks/useSort";
 import { ExplorePostCard } from "./ExplorePostCard";
 import "./ExplorePosts.css";
 export const ExplorePosts = () => {
+  const [posts, setPosts] = useState(null);
   const [activeTab, setActiveTab] = useState({ tab: "Date", sorting: "desc" });
   const tabs = ["Date", "Likes", "Comments"];
+  const { isLoading, sort, error } = useSort();
   const handleClick = (tab: string) => {
     // first condition is to check if the current tab is clicked
     // if thats the case we just wanna update the sorting;
@@ -17,6 +20,11 @@ export const ExplorePosts = () => {
       setActiveTab(update);
     }
   };
+  useEffect(() => {
+    // This would have to be reworked on after i rig up the backend
+    const postsFromDB = sort(activeTab.tab, activeTab.sorting);
+    // setPosts(postsFromDB);
+  }, [activeTab]);
   return (
     <div className="explorePosts-container">
       {/* A tab containing the various sort categories */}
@@ -41,6 +49,8 @@ export const ExplorePosts = () => {
         })}
       </div>
       <div className="explorePosts__details">
+        {/* The posts state is used to map here 
+        The one below is for visualization will change it when the backend is rigged up*/}
         {/* The post cards go here */}
         <ExplorePostCard />
         <ExplorePostCard />
