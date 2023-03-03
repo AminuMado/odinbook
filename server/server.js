@@ -1,8 +1,13 @@
-const express = require("express");
-
 /**
  * -------------- SETUP ----------------
  **/
+
+require("dotenv").config(); // dotenv
+const express = require("express");
+
+//--------------------------------------
+
+// Express App
 const app = express();
 
 /**
@@ -14,7 +19,10 @@ const app = express();
  * To implement this, place the following string into the `.env` file
  * MONGODB_URI=mongodb://<user>:<password>@localhost:27017/database_name
  **/
-
+// setup listner
+app.listen(process.env.PORT, (req, res) => {
+  console.log("Listening on port" + process.env.PORT);
+});
 /**
  * -------------- MIDDLEWARE ----------------
  **/
