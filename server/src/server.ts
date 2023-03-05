@@ -11,6 +11,8 @@ const port: Number = Number(process.env.PORT);
 const server: Server = app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
+//middleware
+app.use(express.json());
 // Routes
 app.use("/api/posts", postRoutes);
 // Index page at default entry route
