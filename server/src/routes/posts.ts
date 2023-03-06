@@ -12,11 +12,11 @@ router.get("/:id", (req: Request, res: Response) => {
 });
 // POST a new post
 router.post("/:id", (req: Request, res: Response) => {
-  res.json({ mssg: "POST a  new post" });
+  res.json({ mssg: "POST a new post" });
 });
 // DELETE a post
-router.post("/:id", (req: Request, res: Response) => {
-  res.json({ mssg: "POST a  new post" });
+router.delete("/:id", (req: Request, res: Response) => {
+  res.json({ mssg: "DELETE a post" });
 });
 
 // Exports
