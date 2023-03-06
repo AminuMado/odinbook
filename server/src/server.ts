@@ -2,15 +2,20 @@ import express, { Request, Response, Application, NextFunction } from "express";
 import { Server } from "http";
 import { config } from "dotenv";
 import postRoutes from "./routes/posts";
+import { connectDB } from "./middleware/connectDB";
 // Loads .env file contents into process.env.
 config();
 
 const app: Application = express();
-const port: Number = Number(process.env.PORT);
+const PORT: Number = Number(process.env.PORT);
+const listenToServer = () => {
+  app.listen(PORT, () => {
+    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+  });
+};
 
-const server: Server = app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
-});
+// connect to Mongodb
+connectDB(() => listenToServer());
 //middleware
 app.use(express.json());
 // Routes
