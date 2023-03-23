@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { config } from "dotenv";
-import { type } from "os";
 // Loads .env file contents into process.env.
 config();
 
