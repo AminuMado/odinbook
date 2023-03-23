@@ -1,5 +1,4 @@
 import express, { Request, Response, Application, NextFunction } from "express";
-import { Server } from "http";
 import { config } from "dotenv";
 import postRoutes from "./routes/posts";
 import { connectDB } from "./middleware/connectDB";
