@@ -1,26 +1,77 @@
+import http from "http";
 import express, { Request, Response, Application, NextFunction } from "express";
-import { config } from "dotenv";
-import postRoutes from "./routes/posts";
+import bodyParser from "body-parser";
+import logging from "./config/logging";
+import config from "./config/config";
+import bookRoutes from "./routes/book";
 import { connectDB } from "./middleware/connectDB";
-// Loads .env file contents into process.env.
-config();
 
-const app: Application = express();
-const PORT: Number = Number(process.env.PORT);
+const NAMESPACE = "Server";
+const app = express();
+const httpServer = http.createServer(app);
+
 const listenToServer = () => {
-  app.listen(PORT, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+  httpServer.listen(config.server.port, () => {
+    logging.info(
+      NAMESPACE,
+      `⚡️Server is running at ${config.server.hostname}:${config.server.port}`
+    );
   });
 };
 
-// connect to Mongodb
+/** Connect to Mongo */
 connectDB(() => listenToServer());
-//middleware
-app.use(express.json());
-// Routes
-app.use("/api/posts", postRoutes);
+
+/** Log the request */
+app.use((req, res, next) => {
+  /** Log the req */
+  logging.info(
+    NAMESPACE,
+    `METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`
+  );
+
+  res.on("finish", () => {
+    /** Log the res */
+    logging.info(
+      NAMESPACE,
+      `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`
+    );
+  });
+
+  next();
+});
+
+/** Parse the body of the request */
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+/** Rules of our API */
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+
+  if (req.method == "OPTIONS") {
+    res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+    return res.status(200).json({});
+  }
+  next();
+});
+
+/** Routes go here */
+app.use("/api/books", bookRoutes);
 // Index page at default entry route
 app.route("/").get((req: Request, res: Response) => {
   console.log(process.cwd());
   res.sendFile(process.cwd() + "/src/index.html");
+});
+/** Error handling */
+app.use((req, res, next) => {
+  const error = new Error("Not found");
+
+  res.status(404).json({
+    message: error.message,
+  });
 });
