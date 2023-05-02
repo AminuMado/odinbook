@@ -3,7 +3,6 @@ import express, { Request, Response, Application, NextFunction } from "express";
 import bodyParser from "body-parser";
 import logging from "./config/logging";
 import config from "./config/config";
-import bookRoutes from "./routes/book";
 import userRoutes from "./routes/user";
 import { connectDB } from "./middleware/connectDB";
 
@@ -62,7 +61,6 @@ app.use((req, res, next) => {
 });
 
 /** Routes go here */
-app.use("/api/books", bookRoutes);
 app.use("/api/user", userRoutes);
 // Index page at default entry route
 app.route("/").get((req: Request, res: Response) => {
