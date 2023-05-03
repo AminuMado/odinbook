@@ -25,10 +25,14 @@ const SERVER = {
   hostname: SERVER_HOSTNAME,
   port: SERVER_PORT,
 };
-
+const GOOGLE = {
+  clientId: String(process.env.GOOGLE_CLIENT_ID),
+  clientSecret: String(process.env.GOOGLE_CLIENT_SECRET),
+};
 const config = {
   mongo: MONGO,
   server: SERVER,
+  google: GOOGLE,
 };
 
 export default config;
