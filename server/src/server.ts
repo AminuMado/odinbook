@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import logging from "./config/logging";
 import config from "./config/config";
 import userRoutes from "./routes/user";
+import authRoutes from "./routes/auth";
 import { connectDB } from "./middleware/connectDB";
 import "./config/passport-config";
 
@@ -63,6 +64,7 @@ app.use((req, res, next) => {
 
 /** Routes go here */
 app.use("/api/user", userRoutes);
+app.use("/auth", authRoutes);
 // Index page at default entry route
 app.route("/").get((req: Request, res: Response) => {
   console.log(process.cwd());
