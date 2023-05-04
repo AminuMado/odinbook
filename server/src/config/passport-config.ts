@@ -9,7 +9,7 @@ passport.use(
       // options for the strategy
       clientID: config.google.clientId,
       clientSecret: config.google.clientSecret,
-      // callbackURL: "/auth/google/redirect",
+      callbackURL: "/auth/google/redirect",
     },
     (accessToken, refreshToken, profile, done) => {
       // get profile details
