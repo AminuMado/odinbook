@@ -5,6 +5,7 @@ import logging from "./config/logging";
 import config from "./config/config";
 import userRoutes from "./routes/user";
 import { connectDB } from "./middleware/connectDB";
+import "./config/passport-config";
 
 const NAMESPACE = "Server";
 const app = express();
