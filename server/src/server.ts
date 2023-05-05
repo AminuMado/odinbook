@@ -1,5 +1,5 @@
 import http from "http";
-import express, { Request, Response, Application, NextFunction } from "express";
+import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 import logging from "./config/logging";
 import config from "./config/config";
