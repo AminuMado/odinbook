@@ -4,8 +4,8 @@ export interface IUser extends Document {
   // We would have to make a better choice betweeen null or opional in fields;
   // Would have to address the object[] thingy would need it to be another model eg <comments>[]
   username: string;
+  googleId: string;
   name: string;
-  password: string;
   about: string;
   email: string;
   avatar: string | null;
