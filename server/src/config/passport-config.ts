@@ -1,6 +1,7 @@
 import config from "./config";
 import passport from "passport";
 import passportGoogle from "passport-google-oauth20";
+import User from "../models/user";
 const GoogleStrategy = passportGoogle.Strategy;
 
 passport.use(
