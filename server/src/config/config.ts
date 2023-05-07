@@ -29,10 +29,14 @@ const GOOGLE = {
   clientId: String(process.env.GOOGLE_CLIENT_ID),
   clientSecret: String(process.env.GOOGLE_CLIENT_SECRET),
 };
+const COOKIE = {
+  key: String(process.env.COOKIE_KEY),
+};
 const config = {
   mongo: MONGO,
   server: SERVER,
   google: GOOGLE,
+  cookie: COOKIE,
 };
 
 export default config;
