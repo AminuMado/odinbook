@@ -1,8 +1,5 @@
 import { Schema, model } from "mongoose";
 import { IUser, UserModel } from "../interfaces/user";
-import logging from "../config/logging";
-const validator = require("validator");
-const bcrypt = require("bcrypt");
 // 1. Create an interface representing a document in MongoDB. or in this case, import it.
 
 // 2. Create a Schema corresponding to the document interface.
