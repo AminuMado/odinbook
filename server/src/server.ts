@@ -6,6 +6,8 @@ import config from "./config/config";
 import userRoutes from "./routes/user";
 import authRoutes from "./routes/auth";
 import { connectDB } from "./middleware/connectDB";
+import cookieSession from "cookie-session";
+import passport from "passport";
 import "./config/passport-config";
 
 const NAMESPACE = "Server";
@@ -21,6 +23,17 @@ const listenToServer = () => {
   });
 };
 
+// setting up cookieSession
+app.use(
+  cookieSession({
+    maxAge: 24 * 60 * 60 * 1000,
+    keys: [config.cookie.key],
+  })
+);
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
 /** Connect to Mongo */
 connectDB(() => listenToServer());
 
