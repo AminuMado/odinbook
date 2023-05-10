@@ -23,7 +23,7 @@ const listenToServer = () => {
   });
 };
 
-// setting up cookieSession
+/** Set Up cookieSession */
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
@@ -31,9 +31,10 @@ app.use(
   })
 );
 
-// initialize passport
+/** Initialize Passport */
 app.use(passport.initialize());
 app.use(passport.session());
+
 /** Connect to Mongo */
 connectDB(() => listenToServer());
 
