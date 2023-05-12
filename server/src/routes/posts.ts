@@ -1,19 +1,18 @@
 import { Router } from "express";
 import { Request, Response } from "express";
+import { createPost } from "../controllers/post";
 
 const router = Router();
 // GET all Posts
 router.get("/", (req: Request, res: Response) => {
   res.json({ mssg: "GET all posts" });
 });
-// GET all single Post
+// GET a single Post
 router.get("/:id", (req: Request, res: Response) => {
   res.json({ mssg: "GET a single post" });
 });
-// POST a new post
-router.post("/:id", (req: Request, res: Response) => {
-  res.json({ mssg: "POST a new post" });
-});
+// Create a new post
+router.post("/:id", createPost);
 // DELETE a post
 router.delete("/:id", (req: Request, res: Response) => {
   res.json({ mssg: "DELETE a post" });
