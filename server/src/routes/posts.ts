@@ -1,6 +1,14 @@
 import { Router } from "express";
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import { createPost } from "../controllers/post";
+
+const checkAuth = (req: Request, res: Response, next: NextFunction) => {
+  if (!req.user) {
+    res.redirect("/auth/login");
+  } else {
+    next();
+  }
+};
 
 const router = Router();
 // GET all Posts
