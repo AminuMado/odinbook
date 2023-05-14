@@ -12,17 +12,17 @@ const checkAuth = (req: Request, res: Response, next: NextFunction) => {
 
 const router = Router();
 // GET all Posts
-router.get("/", (req: Request, res: Response) => {
+router.get("/", checkAuth, (req: Request, res: Response) => {
   res.json({ mssg: "GET all posts" });
 });
 // GET a single Post
-router.get("/:id", (req: Request, res: Response) => {
+router.get("/:id", checkAuth, (req: Request, res: Response) => {
   res.json({ mssg: "GET a single post" });
 });
 // Create a new post
-router.post("/:id", createPost);
+router.post("/:id", checkAuth, createPost);
 // DELETE a post
-router.delete("/:id", (req: Request, res: Response) => {
+router.delete("/:id", checkAuth, (req: Request, res: Response) => {
   res.json({ mssg: "DELETE a post" });
 });
 
