@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 import bodyParser from "body-parser";
 import logging from "./config/logging";
 import config from "./config/config";
-import userRoutes from "./routes/user";
+import postRoutes from "./routes/post";
 import authRoutes from "./routes/auth";
 import { connectDB } from "./middleware/connectDB";
 import cookieSession from "cookie-session";
@@ -77,7 +77,7 @@ app.use((req, res, next) => {
 });
 
 /** Routes go here */
-app.use("/api/user", userRoutes);
+app.use("/api/post", postRoutes);
 app.use("/auth", authRoutes);
 // Index page at default entry route
 app.route("/").get((req: Request, res: Response) => {
