@@ -4,7 +4,7 @@ import { createPost } from "../controllers/post";
 
 const checkAuth = (req: Request, res: Response, next: NextFunction) => {
   if (!req.user) {
-    res.redirect("/auth/login");
+    res.redirect("/auth/google");
   } else {
     next();
   }
