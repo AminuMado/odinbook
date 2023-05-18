@@ -18,10 +18,6 @@ export const Landing = () => {
         <h1 className="Landing__testaccount">Just looking around?</h1>
         <Link to="/home">
           <button className="Landing__testaccountBtn">Test Account</button>
-          <button className="Landing__googleSignupBtn">
-            <GoogleIcon />
-            Google Sign Up
-          </button>
         </Link>
       </div>
       <div className="Landing__btn-container">
@@ -42,6 +38,9 @@ export const Landing = () => {
           className="signup-btn"
         >
           SIGNUP
+        </button>
+        <button className="google-btn">
+          <GoogleIcon />
         </button>
       </div>
       <div>
