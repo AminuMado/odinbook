@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import { LoginForm } from "../components/LoginForm";
 import { SignupForm } from "../components/SignupForm";
 import GoogleIcon from "@mui/icons-material/Google";
+import { useGoogleSignIn } from "../hooks/useGoogleSignIn";
+import { Loader } from "../components/Loader";
 import "./Landing.css";
 export const Landing = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
+  const { login, isLoading } = useGoogleSignIn();
   const clearAll = () => {
     setIsLogin(false);
     setIsSignup(false);
@@ -39,8 +42,8 @@ export const Landing = () => {
         >
           SIGNUP
         </button>
-        <button className="google-btn">
-          <GoogleIcon />
+        <button className="google-btn" onClick={login}>
+          {isLoading ? <Loader /> : <GoogleIcon />}
         </button>
       </div>
       <div>
