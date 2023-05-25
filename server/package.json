@@ -11,8 +11,10 @@
   "author": "Aminu Mado",
   "license": "MIT",
   "dependencies": {
+    "@types/cors": "^2.8.13",
     "@types/passport-google-oauth20": "^2.0.11",
     "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-validator": "^7.0.1",
