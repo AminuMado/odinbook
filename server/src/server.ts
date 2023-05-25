@@ -8,6 +8,7 @@ import authRoutes from "./routes/auth";
 import { connectDB } from "./middleware/connectDB";
 import cookieSession from "cookie-session";
 import passport from "passport";
+import cors from "cors";
 import "./config/passport-config";
 
 const NAMESPACE = "Server";
@@ -22,7 +23,8 @@ const listenToServer = () => {
     );
   });
 };
-
+/** cors */
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 /** Set Up cookieSession */
 app.use(
   cookieSession({
