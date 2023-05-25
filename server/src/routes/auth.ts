@@ -9,7 +9,8 @@ router.get(
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
-  res.send("This is the callback route");
+  res.redirect("http://localhost:3000");
+  // res.send("This is the callback route");
 });
 router.get("/logout", function (req, res, next) {
   // @ts-ignore
