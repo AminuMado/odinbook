@@ -6,8 +6,9 @@ const getUser = (req: Request, res: Response) => {
   const user = req.user;
   if (!user) {
     res.status(404).json({ error: "No User Signed In" });
+  } else {
+    res.status(200).json({ user });
   }
-  res.status(200).json({ user });
 };
 /* --------- Log In --------- */
 
