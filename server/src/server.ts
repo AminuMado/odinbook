@@ -5,6 +5,7 @@ import logging from "./config/logging";
 import config from "./config/config";
 import postRoutes from "./routes/post";
 import authRoutes from "./routes/auth";
+import userRoutes from "./routes/user";
 import { connectDB } from "./middleware/connectDB";
 import cookieSession from "cookie-session";
 import passport from "passport";
@@ -80,6 +81,7 @@ app.use((req, res, next) => {
 
 /** Routes go here */
 app.use("/api/post", postRoutes);
+app.use("/api/user", userRoutes);
 app.use("/auth", authRoutes);
 // Index page at default entry route
 app.route("/").get((req: Request, res: Response) => {
