@@ -35,12 +35,29 @@ export const AuthContext = createContext({} as ContextType);
 export const AuthContextProvider = ({ children }: AuthCtxProviderProps) => {
   const [state, dispatch] = useReducer(authReducer, { user: null });
   useEffect(() => {
-    // get user from local storage
-    const currentUser = localStorage.getItem("user");
-    if (currentUser) {
-      const user = JSON.parse(currentUser);
-      dispatch({ type: "LOGIN", payload: user });
-    }
+    const getUser = async () => {
+      const response = await fetch("api/user/getUser", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const json = await response.json();
+      if (response.ok) {
+        console.log(JSON.stringify(json));
+        // save the user to local storage
+        localStorage.setItem("user", JSON.stringify(json));
+        // update the auth context
+        const { user } = json;
+        dispatch({ type: "LOGIN", payload: user });
+        console.log(json.user);
+      }
+    };
+    getUser();
+    // // get user from local storage
+    // const currentUser = localStorage.getItem("user");
+    // if (currentUser) {
+    //   const user = JSON.parse(currentUser);
+    //   dispatch({ type: "LOGIN", payload: user });
+    // }
   }, []);
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
